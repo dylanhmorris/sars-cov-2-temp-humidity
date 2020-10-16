@@ -1,0 +1,38 @@
+Package: virusenv
+Title: Analyze Virus Stability as a Function of Temparture and Humidity
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Dylan",
+           family = "Morris",
+           role = c("aut", "cre"),
+           email = "dhmorris@princeton.edu",
+           comment = c(ORCID = "0000-0002-3655-406X"))
+Description: Helper functions for temperature and humidity analysis of virus decay.
+License: use_gpl3_license()
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports:
+    Rcpp (>= 1.0.4.6),
+    rstan (>= 2.19.3),
+    ggplot2 (>= 3.3.2),
+    tidyr (>= 1.0.2),
+    dplyr (>= 1.0.0),
+    scales (>= 1.1.1),
+    magrittr (>= 1.5),
+    readxl (>= 1.3.1),
+    stringr (>= 1.4.0),
+    readr (>= 1.3.1),
+    cowplot (>= 1.0.0),
+    ggridges (>= 0.5.2),
+    bayesplot (>= 1.7.1),
+    tidybayes (>= 2.1.1),
+    extrafont (>= 0.17),
+    lubridate (>= 1.7.8),
+    viridis (>= 0.5.1),
+    magick (>= 2.4.0),
+    xtable (>= 1.8),
+    bib2df (>= 1.1.1)

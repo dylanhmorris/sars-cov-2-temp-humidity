@@ -1,0 +1,11 @@
+  int<lower = 1> n_total_datapoints;
+  int<lower = 0> n_used_datapoints;
+  int<lower = 1> n_experiments;
+  int<lower = 1> n_titers;
+  int<lower = 0> n_used_titers;
+  int<lower = 0, upper = 1> well_status[n_total_datapoints];
+  int dilution [n_total_datapoints];
+  int<lower = 1> experiment_id[n_total_datapoints];
+  int<lower = 1, upper = n_titers> titer_id[n_total_datapoints];
+  int<lower = 1, upper = n_titers> titer_experiment_id[n_titers];
+  vector<lower = 0>[n_titers] titer_times;
