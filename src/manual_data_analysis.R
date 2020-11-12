@@ -12,7 +12,7 @@ library(viridis)
 
 qpcr <- "../dat/cleaned/aerosol_metadata.csv"
 
-pla_hl_path <- '../out/mcmc-chains/plastic-prior-check.Rds'
+current <- '../out/mcmc_chains/mechanistic-evaporation-prior-check.Rds'
 
 
 

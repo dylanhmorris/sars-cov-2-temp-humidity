@@ -95,16 +95,22 @@ LIT_NAME = literature
 
 SARS_MERS_NAME = sars-mers
 
+SEP_REGIME_MOD_CONC_NAME = mechanistic-two-regime-mod-conc
+SEP_REGIME_MEAS_CONC_NAME =  mechanistic-two-regime-meas-conc
+
 HL_MODEL_NAMES = $(PLA_NAME) $(SARS_MERS_NAME) 
 
 # mechanistic kinetics models
 MECH_$(EVAP_NAME)_NAME = mechanistic-$(EVAP_NAME)
 MECH_$(EVAP_SALT_NAME)_NAME = mechanistic-$(EVAP_SALT_NAME)
 
-MECH_MODEL_NAMES = $(MECH_$(EVAP_NAME)_NAME) $(MECH_$(EVAP_SALT_NAME)_NAME)
+MECH_MODEL_NAMES = $(MECH_$(EVAP_NAME)_NAME) $(MECH_$(EVAP_SALT_NAME)_NAME) $(SEP_REGIME_MOD_CONC_NAME) $(SEP_REGIME_MEAS_CONC_NAME)
+
 # titer inference models
 INFER_$(PLA_NAME)_NAME = inferred-$(PLA_NAME)-titers
 INFER_$(SARS_MERS_NAME)_NAME = inferred-$(SARS_MERS_NAME)-titers
+INFER_$(SEP_REGIME_MOD_CONC_NAME)_NAME = $(INFER_$(PLA_NAME)_NAME)
+INFER_$(SEP_REGIME_MEAS_CONC_NAME)_NAME = $(INFER_$(PLA_NAME)_NAME)
 
 TITER_MODEL_NAMES = $(INFER_$(PLA_NAME)_NAME) $(INFER_$(SARS_MERS_NAME)_NAME)
 
@@ -117,6 +123,8 @@ EVAPORATION_MODEL_NAMES =  $(HL_MODEL_NAMES) $(MECH_MODEL_NAMES)
 MODEL_NAMES = $(HL_MODEL_NAMES) $(LIT_NAME) $(MECH_MODEL_NAMES)
 # all models
 MODEL_NAMES_INCL_TITER = $(MODEL_NAMES) $(TITER_MODEL_NAMES)
+
+REGRESSION_MODEL_NAMES = $(PLA_NAME) $(MECH_MODEL_NAMES)
 
 # titers for additional models
 INFER_$(MECH_$(PLA_NAME)_NAME)_NAME = inferred-$(PLA_NAME)-titers
@@ -165,6 +173,9 @@ $(MECH_$(SALT_NAME)_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA)
 
 $(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA) $(EVAPORATION_DATA)
 $(MECH_$(EVAP_SALT_NAME)_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA) $(EVAPORATION_DATA)
+$(SEP_REGIME_MOD_CONC_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA) $(EVAPORATION_DATA)
+$(SEP_REGIME_MEAS_CONC_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA) $(EVAPORATION_DATA)
+
 
 $(INFER_$(PLA_NAME)_NAME)_FITTING_DATA = $($(PLA_NAME)_DATA)
 $(INFER_$(SARS_MERS_NAME)_NAME)_FITTING_DATA = $($(SARS_MERS_NAME)_DATA)
@@ -271,9 +282,11 @@ CHAIN_DIAGNOSTICS = $(OUTPUT)/chain_diagnostics.csv
 
 PRIOR_CHECK_FIGURES = $(addprefix $(PRIOR_CHECK_DIR_NAME)/figure-, $(addsuffix -prior-check.pdf, $(MODEL_NAMES_INCL_TITER))) $(addprefix $(PRIOR_CHECK_DIR_NAME)/figure-evap-phase-, $(addsuffix -prior-check.pdf, $(EVAPORATION_MODEL_NAMES)))
 
+MODEL_FIT_FIGURES = $(addprefix figure-, $(addsuffix -qe-fit.pdf, $(REGRESSION_MODEL_NAMES))) $(addprefix figure-, $(addsuffix -evap-phase-fit.pdf, $(REGRESSION_MODEL_NAMES)))
+
 POSTERIOR_CHECK_FIGURES = $(addprefix $(POSTERIOR_CHECK_DIR_NAME)/figure-, $(addsuffix -posterior-check.pdf, $(MODEL_NAMES))) $(addprefix $(POSTERIOR_CHECK_DIR_NAME)/figure-evap-phase-, $(addsuffix -posterior-check.pdf, $(EVAPORATION_MODEL_NAMES)))
 
-FIGURES = figure-mech-fit.pdf figure-mech-fit-evap-phase.pdf figure-mech-fit-mod-conc.pdf figure-mech-fit-mod-conc-evap-phase.pdf figure-halflives-schematic.pdf figure-extrapolation.pdf figure-concentration-factor-mech.pdf figure-concentration-factor-model.pdf figure-predict-literature.pdf figure-hl-fit.pdf figure-hl-fit-evap-phase.pdf figure-evaporation.pdf figure-prisma.pdf figure-sars-mers-regression.pdf $(PRIOR_CHECK_FIGURES) $(POSTERIOR_CHECK_FIGURES)
+FIGURES = figure-halflives-schematic.pdf figure-extrapolation.pdf figure-concentration-factor-mech.pdf figure-concentration-factor-model.pdf figure-predict-literature.pdf figure-evaporation.pdf figure-prisma.pdf figure-sars-mers-regression.pdf figure-parameters.pdf figure-compare-activation-energies.pdf $(PRIOR_CHECK_FIGURES) $(POSTERIOR_CHECK_FIGURES) $(MODEL_FIT_FIGURES)
 
 FIGURE_PATHS = $(addprefix $(FIGURE_DIR)/, $(FIGURES))
 MS_FIGURES = $(addprefix $(MS_FIG_DIR)/, $(FIGURES))
@@ -282,7 +295,7 @@ MS_FIGURES = $(addprefix $(MS_FIG_DIR)/, $(FIGURES))
 ## all tables
 #############################
 
-TABLES = table-$(PLA_NAME)-halflives.tex table-$(SARS_MERS_NAME)-halflives.tex table-$(LIT_NAME)-halflives.tex
+TABLES = table-$(PLA_NAME)-halflives.tex table-$(SARS_MERS_NAME)-halflives.tex table-$(LIT_NAME)-halflives.tex table-meas-parameters.tex table-mod-parameters.tex
 
 TABLE_PATHS = $(addprefix $(TABLE_DIR)/, $(TABLES))
 MS_TABLES = $(addprefix $(MS_TABLE_DIR)/, $(TABLES))
@@ -291,7 +304,7 @@ MS_TABLES = $(addprefix $(MS_TABLE_DIR)/, $(TABLES))
 ## all macros
 #############################
 
-MACRO_NAMES = macros-$(PLA_NAME)-halflives.sty macros-$(SARS_MERS_NAME)-halflives.sty macros-plastic-hyperparams.sty macros-literature-hyperparams.sty macros-infer-hyperparams.sty
+MACRO_NAMES = macros-$(PLA_NAME)-halflives.sty macros-$(SARS_MERS_NAME)-halflives.sty macros-plastic-hyperparams.sty macros-literature-hyperparams.sty macros-infer-hyperparams.sty macros-meas-parameters.sty macros-mod-parameters.sty macros-energy-comparison.sty
 MACRO_PATHS = $(addprefix $(MS_MACRO_DIR)/, $(MACRO_NAMES))
 
 
@@ -333,24 +346,45 @@ $(CLEANED)/%-data.csv: $(CLEANING_SRC)/clean-%-data.R $(RAW)/th-data.csv
 $(MCMC_CHAINS)/$(MECH_$(EVAP_SALT_NAME)_NAME)$(CHAINS_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
 	@echo Making evap salt: $@... "\n\n"
 	$(MKDIR) $(MCMC_CHAINS)
-	$(R_COMMAND) $^ $@ FALSE FALSE
+	$(R_COMMAND) $^ $@ FALSE FALSE TRUE
 
 $(MCMC_CHAINS)/$(MECH_$(EVAP_SALT_NAME)_NAME)$(PRIOR_CHECK_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
 	@echo Making evap salt prior check: $@... "\n\n"
 	$(MKDIR) $(MCMC_CHAINS)
-	$(R_COMMAND) $^ $@ TRUE FALSE
+	$(R_COMMAND) $^ $@ TRUE FALSE TRUE
+
+$(MCMC_CHAINS)/$(SEP_REGIME_MOD_CONC_NAME)$(CHAINS_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
+	@echo making two E_a model, modeled conc: $@... "\n\n"
+	$(MKDIR) $(MCMC_CHAINS)
+	$(R_COMMAND) $^ $@ FALSE FALSE FALSE
+
+$(MCMC_CHAINS)/$(SEP_REGIME_MEAS_CONC_NAME)$(CHAINS_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
+	@echo making two E_a model, measured conc: $@... "\n\n"
+	$(MKDIR) $(MCMC_CHAINS)
+	$(R_COMMAND) $^ $@ FALSE TRUE FALSE
+
+
+$(MCMC_CHAINS)/$(SEP_REGIME_MOD_CONC_NAME)$(PRIOR_CHECK_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
+	@echo making two E_a model prior check, modeled conc: $@... "\n\n"
+	$(MKDIR) $(MCMC_CHAINS)
+	$(R_COMMAND) $^ $@ TRUE FALSE FALSE
+
+$(MCMC_CHAINS)/$(SEP_REGIME_MEAS_CONC_NAME)$(PRIOR_CHECK_SUFFIX): $($(MECH_$(EVAP_NAME)_NAME)_FITTING_SCRIPT) $(STAN_SRC)/$($(MECH_$(EVAP_NAME)_NAME)_MODEL_SRC) $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $($(MECH_$(EVAP_NAME)_NAME)_HYPERS)
+	@echo making two E_a model prior check, measured conc: $@... "\n\n"
+	$(MKDIR) $(MCMC_CHAINS)
+	$(R_COMMAND) $^ $@ TRUE TRUE FALSE
 
 
 # generic model fitting rule
 $(MCMC_CHAINS)/%$(CHAINS_SUFFIX): $$($$*_FITTING_SCRIPT) $(STAN_SRC)/$$($$*_MODEL_SRC) $$($$*_FITTING_DATA) $$($$*_HYPERS)
 	@echo Making $@... "\n\n"
 	$(MKDIR) $(MCMC_CHAINS)
-	$(R_COMMAND) $^ $@ FALSE TRUE
+	$(R_COMMAND) $^ $@ FALSE TRUE TRUE
 
 $(MCMC_CHAINS)/%$(PRIOR_CHECK_SUFFIX): $$($$*_FITTING_SCRIPT) $(STAN_SRC)/$$($$*_MODEL_SRC) $$($$*_FITTING_DATA) $$($$*_HYPERS)
 	@echo "\nMaking" $@... "\n"
 	$(MKDIR) $(MCMC_CHAINS)
-	$(R_COMMAND) $^ $@ TRUE TRUE
+	$(R_COMMAND) $^ $@ TRUE TRUE TRUE
 
 ###########################
 ## diagnostics for MCMC
@@ -376,11 +410,6 @@ $(FIGURE_DIR)/figure-halflives-schematic.pdf: $(FIGURE_SRC)/figure-halflives-sch
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
 
-$(FIGURE_DIR)/figure-mech-fit.pdf: $(FIGURE_SRC)/figure-regression.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_CHAINS) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
 $(FIGURE_DIR)/figure-extrapolation.pdf: $(FIGURE_SRC)/figure-extrapolation.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_CHAINS) $(MECH_EVAP_SALT_CHAINS)
 	$(MKDIR) $(FIGURE_DIR)
 	$(R_COMMAND) $^ $@
@@ -391,32 +420,6 @@ $(FIGURE_DIR)/figure-extrapolation.jpg: $(FIGURE_SRC)/figure-extrapolation.R $($
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
 
-
-$(FIGURE_DIR)/figure-mech-fit-evap-phase.pdf: $(FIGURE_SRC)/figure-regression.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_CHAINS) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
-$(FIGURE_DIR)/figure-mech-fit-mod-conc.pdf: $(FIGURE_SRC)/figure-regression.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_SALT_CHAINS) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
-$(FIGURE_DIR)/figure-mech-fit-mod-conc-evap-phase.pdf: $(FIGURE_SRC)/figure-regression.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_SALT_CHAINS) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
-
-$(FIGURE_DIR)/figure-hl-fit.pdf: $(FIGURE_SRC)/figure-regression.R $($(PLA_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
-$(FIGURE_DIR)/figure-hl-fit-evap-phase.pdf: $(FIGURE_SRC)/figure-regression.R $($(PLA_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(INF_PLA_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
 
 $(FIGURE_DIR)/figure-sars-mers-regression.pdf: $(FIGURE_SRC)/figure-sars-mers-regression.R $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX)  $(MCMC_CHAINS)/$(INFER_$(SARS_MERS_NAME)_NAME)$(CHAINS_SUFFIX)
 	$(MKDIR) $(FIGURE_DIR)
@@ -453,6 +456,16 @@ $(FIGURE_DIR)/figure-evaporation.pdf: $(FIGURE_SRC)/figure-evaporation.R $($(PLA
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
 
+$(FIGURE_DIR)/figure-parameters.pdf: $(FIGURE_SRC)/figure-parameters.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_CHAINS) $(MECH_EVAP_SALT_CHAINS)
+	$(MKDIR) $(FIGURE_DIR)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
+$(FIGURE_DIR)/figure-compare-activation-energies.pdf: $(FIGURE_SRC)/figure-compare-activation-energies.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(SEP_REGIME_MEAS_CONC_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SEP_REGIME_MOD_CONC_NAME)$(CHAINS_SUFFIX)
+	$(MKDIR) $(FIGURE_DIR)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
 $(FIGURE_DIR)/$(PRIOR_CHECK_DIR_NAME)/figure-literature-prior-check.pdf: $(FIGURE_SRC)/figure-literature-predictive-check.R $($(LIT_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(LIT_NAME)$(PRIOR_CHECK_SUFFIX)
 	$(MKDIR) $(dir $@)
 	$(R_COMMAND) $^ $@
@@ -460,6 +473,14 @@ $(FIGURE_DIR)/$(PRIOR_CHECK_DIR_NAME)/figure-literature-prior-check.pdf: $(FIGUR
 
 $(FIGURE_DIR)/$(POSTERIOR_CHECK_DIR_NAME)/figure-literature-posterior-check.pdf: $(FIGURE_SRC)/figure-literature-predictive-check.R $($(LIT_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX)
 	$(MKDIR) $(dir $@)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
+$(FIGURE_DIR)/figure-%-evap-phase-fit.pdf: $(FIGURE_SRC)/figure-regression.R $$($$*_FITTING_DATA) $(MCMC_CHAINS)/%$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$$(INFER_$$*_NAME)$(CHAINS_SUFFIX)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
+$(FIGURE_DIR)/figure-%-qe-fit.pdf: $(FIGURE_SRC)/figure-regression.R $$($$*_FITTING_DATA) $(MCMC_CHAINS)/%$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$$(INFER_$$*_NAME)$(CHAINS_SUFFIX)
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
 
@@ -520,6 +541,16 @@ $(TABLE_DIR)/table-%-halflives.tex: $(TABLE_SRC)/table-halflives.R  $$($$*_FITTI
 	$(MKDIR) $(TABLE_DIR)
 	$(R_COMMAND) $^ $@
 
+$(TABLE_DIR)/table-meas-parameters.tex: $(TABLE_SRC)/table-parameters.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_CHAINS)
+	$(MKDIR) $(TABLE_DIR) 
+	$(R_COMMAND) $^ $@ measured
+
+$(TABLE_DIR)/table-mod-parameters.tex: $(TABLE_SRC)/table-parameters.R $($(MECH_$(EVAP_SALT_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_SALT_CHAINS)
+	$(MKDIR) $(TABLE_DIR)
+	$(R_COMMAND) $^ $@ modeled
+
+
+
 $(TABLE_DIR)/%.tex: $(TABLE_SRC)/%.R
 	$(MKDIR) $(TABLE_DIR)
 	$(R_COMMAND) $^ $@
@@ -538,9 +569,25 @@ $(MS_MACRO_DIR)/macros-%-halflives.sty: $(TABLE_SRC)/table-halflives.R $$($$*_FI
 	$(MKDIR) $(MS_MACRO_DIR)
 	$(R_COMMAND) $^ $@
 
+$(MS_MACRO_DIR)/macros-meas-parameters.sty: $(TABLE_SRC)/table-parameters.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_CHAINS)
+	$(MKDIR) $(MS_MACRO_DIR) 
+	$(R_COMMAND) $^ $@ measured
+
+$(MS_MACRO_DIR)/macros-mod-parameters.sty: $(TABLE_SRC)/table-parameters.R $($(MECH_$(EVAP_SALT_NAME)_NAME)_FITTING_DATA) $(MECH_EVAP_SALT_CHAINS)
+	$(MKDIR) $(MS_MACRO_DIR)
+	$(R_COMMAND) $^ $@ modeled
+
+$(MS_MACRO_DIR)/macros-energy-comparison.sty: $(TABLE_SRC)/macros-energy-comparison.R $($(MECH_$(EVAP_NAME)_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(SEP_REGIME_MEAS_CONC_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SEP_REGIME_MOD_CONC_NAME)$(CHAINS_SUFFIX)
+	$(MKDIR) $(MS_MACRO_DIR)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
+
 $(MS_MACRO_DIR)/macros-%-hyperparams.sty: $(PARAMS)/make-parameter-macros.R $(PARAMS)/%_hyperparams.R
 	$(MKDIR) $(MS_MACRO_DIR)
 	$(R_COMMAND) $^ $@
+
+
 
 #####################################
 # convenience rules for making

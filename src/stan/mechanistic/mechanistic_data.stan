@@ -14,3 +14,6 @@
 
   real mean_log_shape_parameter_steepness;
   real<lower = 0> sd_log_shape_parameter_steepness;
+
+// flag indicating whether effloresced reaction has its own E_a
+  int shared_E_a; 

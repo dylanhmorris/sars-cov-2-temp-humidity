@@ -1,6 +1,11 @@
 // calculate key mechanistic parameters
-  E_a_dry = R() * log_k_30_20_ratio_dry / temp_inv_diff(20, 30);
   E_a_wet = R() * log_k_30_20_ratio_wet / temp_inv_diff(20, 30);
+  
+if(shared_E_a){
+  E_a_dry = R() * log_k_30_20_ratio_wet / temp_inv_diff(20, 30);
+ } else {
+  E_a_dry = R() * log_k_30_20_ratio_dry / temp_inv_diff(20, 30);
+ }
   
   k_20_dry = log10(2) / exp(log_hl_20_dry);
   k_20_wet = log10(2) / exp(log_hl_20_wet);

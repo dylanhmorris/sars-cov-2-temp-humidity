@@ -78,8 +78,11 @@ param_list <- list(
 
     ## color palette
     "general_palette" = list(
-        "interval_grey" = "#525252"
-    ),
+        "interval_grey" = "#525252"),
+
+    "parameter_colors" = list(
+        "fill_color_A" = "#4b56ab",
+        "fill_color_E_a" = "#d66754"),
     
     "virus_colors" = list(
         "SARS-CoV-2" = "#407dc2",

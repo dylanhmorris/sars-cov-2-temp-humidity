@@ -17,12 +17,12 @@ This repository accompanies the article "The effect of temperature and humidity 
 ## License and citation information
 If you use the code or data provided here, please make sure to do so in light of the project [license](LICENSE.txt) and please cite our work as below:
 
-- DH Morris, KC Yinda, A Gamble et al. The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses. 2020.
+- DH Morris, KC Yinda, A Gamble et al. The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses. bioRxiv preprint. 2020. DOI:[10.1101/2020.10.16.341883](https://doi.org/10.1101/2020.10.16.341883)
 
 Bibtex record:
 ```
-@electronic{morris2020temperature,
-    Author = {
+@article{morris2020temperature,
+    author = {
       Dylan H. Morris AND 
       Kwe Claude Yinda AND 
       Amandine Gamble AND 
@@ -35,14 +35,16 @@ Bibtex record:
       Linsey C. Marr AND
       Vincent J. Munster AND
       James O. Lloyd-Smith},
-      Title = {The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses},
-      Date = {2020},
+      title = {The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses},
+      journal = {bioRxiv preprint},
+      year = {2020},
+      doi = {10.1101/2020.10.16.341883},
       URL = {https://github.com/dylanhmorris/sars-cov-2-temp-humidity}
 }
 ```
 
 ## Article abstract 
-Since emerging in late 2019, SARS-CoV-2 has caused a global pandemic, and it may become an endemic human pathogen. Understanding the impact of environmental conditions on SARS-CoV-2 viability and its transmission potential is crucial to anticipating epidemic dynamics and designing mitigation strategies. Ambient temperature and humidity are known to have strong effects on the environmental stability of viruses, but there is little data for SARS-CoV-2, and a general quantitative understanding of how temperature and humidity affect virus stability has remained elusive. Here, we characterise the stability of SARS-CoV-2 on an inert surface at a variety of temperature and humidity conditions, and introduce a mechanistic model that enables accurate prediction of virus stability in unobserved conditions. We find that SARS-CoV-2 survives better at low temperatures and extreme relative humidities; median estimated virus half-life was more than 24 hours at 10C and 40\% RH, but less than an hour and a half at 27C and 65\% RH. Our results highlight scenarios of particular transmission risk, and provide a mechanistic explanation for observed superspreading events in cool indoor environments such as food processing plants. Moreover, our model predicts observations from other human coronaviruses and other studies of SARS-CoV-2, suggesting the existence of shared mechanisms that determine environmental stability across a number of enveloped viruses.
+Understanding the impact of environmental conditions on virus viability and transmission potential is crucial to anticipating epidemic dynamics and designing mitigation strategies. Ambient temperature and humidity are known to have strong effects on the environmental stability of viruses, but a general quantitative understanding of how temperature and humidity affect virus stability has remained elusive. We characterize the stability of SARS-CoV-2 on an inert surface at a variety of temperature and humidity conditions, and introduce a mechanistic model that enables accurate prediction of virus stability in unobserved conditions. We find that SARS-CoV-2 survives better at low temperatures and extreme relative humidities; median estimated virus half-life was more than 24 hours at 10 °C and 40 % RH, but approximately an hour and a half at 27 °C and 65 % RH. Moreover, our model predicts observations from other human coronaviruses and other studies of SARS-CoV-2, suggesting the existence of shared mechanisms that determine environmental stability across a number of enveloped viruses. Our results highlight scenarios of particular transmission risk and point to broad strategies for pandemic mitigation, while opening new frontiers for the mechanistic study of viral transmission.
 
 ## Directories
 - ``src``: all code, including data preprocessing, Bayesian model definition and fitting, and results post-processing and figure generation:

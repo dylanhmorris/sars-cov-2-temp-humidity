@@ -197,8 +197,8 @@ theme_family <- "CM Sans"
 #################################
 set.seed(2342) # reproducible! (since we use random draws)
 text_size = 40
-chosen_temperature <- 27
-chosen_rh <- 85
+chosen_temperature <- 22
+chosen_rh <- 65
 
 n_lines_evap <- 10
 n_lines_decay <- 10
@@ -221,7 +221,7 @@ interval_grey <- general_palette[["interval_grey"]]
 
 ylim_evap <- c(-5, 55)
 ylim_titer <- c(10^(-0.5), 1e5)
-xlim <- c(-1, 35)
+xlim <- c(-1, 30)
 times <- tibble(
     time = seq(0, xlim[2], length.out = 250))
 
@@ -462,7 +462,7 @@ evap_panel <- evap_panel +
 
 
 regression_panel <- regression_panel +
-    annotate("text", x = 2.5, y = 100 * ylim_titer[2],
+    annotate("text", x = 1.5, y = 100 * ylim_titer[2],
              label = "evaporation\nphase",
              hjust = 0.5,
              vjust = 0.5,
@@ -688,13 +688,6 @@ schematic_text <- ggplot(
         hjust = 0,
         color = "black",
         family = theme_family) +
-    geom_text(
-        x = 52.5,
-        y = 0.625,
-        label = "ERH",
-        size = 10,
-        color = "black",
-        family = theme_family) +
     schematic_curve(
         y_anchor = hot_anchor,
         mapping = aes(color = temperature),
@@ -750,7 +743,8 @@ schematic_text <- ggplot(
                     curvature = -0.1,
                     size = 1.25) +
     scale_y_continuous(breaks = c()) +
-    scale_x_continuous(breaks = seq(0, 100, 10)) +
+    scale_x_continuous(breaks = c(20, 45, 80),
+                       labels = c("below ERH", "ERH", "above ERH")) +
     coord_cartesian(xlim = c(0, 102),
                     ylim = c(0, y_stretch),
                     expand = 0) +

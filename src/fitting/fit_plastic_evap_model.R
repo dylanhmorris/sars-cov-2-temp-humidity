@@ -43,6 +43,8 @@ prior_check <- (as.logical(args[6]) &
                 (!is.na(as.logical(args[6]))))
 empirical_salt <- (as.logical(args[7]) &
                    (!is.na(as.logical(args[7]))))
+shared_E_a <- (as.logical(args[8]) &
+               (!is.na(as.logical(args[8]))))
 
 
 
@@ -170,7 +172,8 @@ evap_data_list <- list(
 
 flags_list <- list(
     empirical_salt = empirical_salt,
-    mass_prior_check = FALSE)
+    mass_prior_check = FALSE,
+    shared_E_a = shared_E_a)
 
 
 full_data_list <- c(
