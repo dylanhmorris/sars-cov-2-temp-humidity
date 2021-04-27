@@ -2,7 +2,7 @@
 
 #####################################
 ## name: install_needed_packages.R
-## author: Dylan Morris <dhmorris@princeton.edu>
+## author: Dylan Morris
 ##
 ## installs needed packages for
 ## reproducing SARS-CoV-2 decay

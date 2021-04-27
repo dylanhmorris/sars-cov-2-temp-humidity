@@ -44,12 +44,22 @@ model_name_macro_string <- sprintf(
     "\\%sconcentration{}",
     model_name)
 
+if(model_name == "modeled") {
+    model_description_string <- paste0(
+        "using a fitted curve relating RH to concentration ",
+        "factor, as in the main text. ")
+} else {
+    model_description_string <- paste0(
+        "using concentration ",
+        "factors directly measured in evaporation ",
+        "experiments. ")
+}
+
 table_caption <- paste0(
-    "\\textbf{Parameter estimates for the mechanistic model ",
+    "Parameter estimates for the mechanistic model ",
     "of SARS-CoV-2 inactivation as a function of temperature ",
     "and humidity, ",
-    model_name_macro_string,
-    " fit.} ",
+    model_description_string,
     "Estimates are reported as posterior ",
     "median and the middle 95\\% credible interval.")
 

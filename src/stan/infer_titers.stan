@@ -1,5 +1,5 @@
   /* filename: infer_titers.stan
-   * author: Dylan H. Morris <dhmorris@princeton.edu>
+   * author: Dylan H. Morris <dylan@dylanhmorris.com>
    * 
    * description: estimate virus titers 
    * (log10 TCID50 / vol) directly 

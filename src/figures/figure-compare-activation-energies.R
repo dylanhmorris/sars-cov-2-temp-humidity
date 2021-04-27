@@ -49,20 +49,22 @@ parameter_colors <- get_params("parameter_colors")
 fill_color_E_a <- parameter_colors["fill_color_E_a"]
 fill_color_diff <- "#97afc2"
 stackratio <- 1
-param_levels <- c("E_a_wet",
-                  "E_a_dry",
-                  "E_a_diff",
-                  "E_a_percent")
+param_levels <- c(
+    "E_a_dry",
+    "E_a_wet",
+    "E_a_diff",
+    "E_a_percent")
+
 param_labels <- c("E[a]^{eff}",
                   "E[a]^{sol}",
                   "E[a]^{eff} - E[a]^{sol}",
                   "frac(E[a]^{eff} - E[a]^{sol}, E[a]^{eff})")
 
-model_levels <- c("measured concentration",
-                  "modeled concentration")
+model_levels <- c("main model",
+                  "directly measured concentration")
 
-model_labels <- c("measured~concentration~fit",
-                  "modeled~concentration~fit")
+model_labels <- c("main~model",
+                  "directly~measured~concentration")
 
 #################################
 # read in needed data
@@ -90,11 +92,11 @@ parse_chains <- function(chains){
 
 meas_results_draws <- meas_results_chains %>%
     parse_chains() %>%
-    mutate(model = "measured concentration")
+    mutate(model = "directly measured concentration")
 
 mod_results_draws <- mod_results_chains %>%
     parse_chains() %>%
-    mutate(model = "modeled concentration")
+    mutate(model = "main model")
 
 results_draws <- bind_rows(meas_results_draws,
                            mod_results_draws) %>%
@@ -122,6 +124,7 @@ figure_E_a <- results_melt %>%
         alpha = alpha,
         stackratio = stackratio,
         interval_size_range = interval_size_range,
+        binwidth = 1500,
         slab_colour = "black") +
     facet_grid(vars(param),
                vars(model),
@@ -130,8 +133,8 @@ figure_E_a <- results_melt %>%
     xlab("activation energy (J/mol)") +
     theme_project()
 
-max_x <- max(c(abs(quantile(results_draws$E_a_percent, 0.001)),
-               abs(quantile(results_draws$E_a_percent, 0.999))))
+max_x <- max(c(abs(quantile(results_draws$E_a_percent, 0.003)),
+               abs(quantile(results_draws$E_a_percent, 0.997))))
 
 figure_diff <- results_melt %>%
     filter(parameter == "E_a_percent") %>%
@@ -142,6 +145,7 @@ figure_diff <- results_melt %>%
         fill = fill_color_diff,
         stroke = stroke,
         alpha = alpha,
+        binwidth = 0.033,
         stackratio = stackratio,
         interval_size_range = interval_size_range,
         slab_colour = "black") +
@@ -159,12 +163,12 @@ figure <- plot_grid(
     figure_E_a,
     figure_diff,
     nrow = 2,
-    rel_heights = c(2, 1))
+    rel_heights = c(2, 1.25))
     
 
 save_plot(outpath = outpath,
           fig = figure,
           base_height = 15,
-          base_asp = 1.25)
+          base_asp = 1)
 
 warnings()

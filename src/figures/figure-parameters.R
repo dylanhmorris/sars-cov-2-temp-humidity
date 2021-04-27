@@ -50,11 +50,11 @@ fill_color_A <- parameter_colors["fill_color_A"]
 fill_color_E_a <- parameter_colors["fill_color_E_a"]
 stackratio <- 1
 
-model_levels <- c("measured concentration",
-                  "modeled concentration")
+model_levels <- c("modeled concentration",
+                  "measured concentration")
 
-model_labels <- c("measured~concentration~fit",
-                  "modeled~concentration~fit")
+model_labels <- c("Main~model",
+                  "`Directly-measured`~concentration")
 
 param_levels <- c("E_a",
                   "A_dry",

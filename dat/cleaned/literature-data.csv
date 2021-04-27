@@ -127,57 +127,57 @@ study_id,study_author_1,study_doi,experiment_id,two_hums,two_temps,measurement_i
 5,Batejat,10.1101/2020.05.01.067769,17,FALSE,TRUE,126,6,SARS-CoV-2,Bulk medium,Nasopharyngeal samples,Resp. sec.,Unspecified,95,NA,0.016666667,6.754,-0.3119999999999994,-6.084
 5,Batejat,10.1101/2020.05.01.067769,17,FALSE,TRUE,127,6,SARS-CoV-2,Bulk medium,Nasopharyngeal samples,Resp. sec.,Unspecified,95,NA,0.05,6.754,-6.084,-6.084
 5,Batejat,10.1101/2020.05.01.067769,17,FALSE,TRUE,128,6,SARS-CoV-2,Bulk medium,Nasopharyngeal samples,Resp. sec.,Unspecified,95,NA,0.1,6.754,-6.084,-6.084
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,129,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,4,4.54,-0.31599999999999984,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,130,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,8,4.54,-0.6320000000000001,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,131,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,24,4.54,-0.2729999999999997,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,132,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,72,4.54,-1.2349999999999999,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,133,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,96,4.54,-1.0060000000000002,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,134,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,168,4.54,-1.2069999999999999,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,18,FALSE,TRUE,135,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,336,4.54,-2.356,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,136,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,4,4.555,-0.431,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,137,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,8,4.555,-1.2649999999999997,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,138,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,24,4.555,-1.8109999999999995,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,139,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,72,4.555,-2.5549999999999997,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,140,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,96,4.555,-2.5549999999999997,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,141,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,168,4.555,-2.5549999999999997,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,19,FALSE,TRUE,142,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,336,4.555,-2.5549999999999997,-2.5549999999999997
-6,Harbourt,10.1101/2020.07.01.20144253,20,FALSE,TRUE,143,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,4,4.54,-1.968,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,20,FALSE,TRUE,144,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,8,4.54,-2.54,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,20,FALSE,TRUE,145,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,24,4.54,-2.54,-2.54
-6,Harbourt,10.1101/2020.07.01.20144253,20,FALSE,TRUE,146,7,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,72,4.54,-2.54,-2.54
-7,Leclercq,10.1111/irv.12261,21,FALSE,TRUE,147,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.008333333,5.59,-0.9199999999999999,-4.92
-7,Leclercq,10.1111/irv.12261,21,FALSE,TRUE,148,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.25,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,21,FALSE,TRUE,149,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.5,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,21,FALSE,TRUE,150,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,1,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,21,FALSE,TRUE,151,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,2,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,22,FALSE,TRUE,152,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.008333333,5.59,-3.59,-4.92
-7,Leclercq,10.1111/irv.12261,22,FALSE,TRUE,153,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.25,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,22,FALSE,TRUE,154,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.5,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,22,FALSE,TRUE,155,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,1,5.59,-4.92,-4.92
-7,Leclercq,10.1111/irv.12261,22,FALSE,TRUE,156,8,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,2,5.59,-4.92,-4.92
-8,Lamarre,10.1139/m89-160,23,FALSE,TRUE,157,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,24,6.101,0.004000000000000423,-4.801
-8,Lamarre,10.1139/m89-160,23,FALSE,TRUE,158,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,96,6.101,-0.12000000000000012,-4.801
-8,Lamarre,10.1139/m89-160,23,FALSE,TRUE,159,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,312,6.101,-0.6609999999999996,-4.801
-8,Lamarre,10.1139/m89-160,24,FALSE,TRUE,160,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,24,5.548,-0.6360000000000001,-4.248
-8,Lamarre,10.1139/m89-160,24,FALSE,TRUE,161,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,96,5.548,-1.709,-4.248
-8,Lamarre,10.1139/m89-160,24,FALSE,TRUE,162,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,312,5.548,-4.251,-4.248
-8,Lamarre,10.1139/m89-160,25,FALSE,TRUE,163,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,24,5.391,-0.6020000000000003,-4.091
-8,Lamarre,10.1139/m89-160,25,FALSE,TRUE,164,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,96,5.391,-1.7730000000000001,-4.091
-8,Lamarre,10.1139/m89-160,25,FALSE,TRUE,165,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,264,5.391,-4.101,-4.091
-8,Lamarre,10.1139/m89-160,26,FALSE,TRUE,166,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,37,NA,24,4.687,-0.9510000000000001,-3.3870000000000005
-8,Lamarre,10.1139/m89-160,26,FALSE,TRUE,167,9,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,37,NA,96,4.687,-3.391,-3.3870000000000005
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,168,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.083333333,6.766,-0.9429999999999996,-5.266
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,169,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.166666667,6.766,-1.3949999999999996,-5.266
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,170,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.5,6.766,-4.411,-5.266
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,171,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,1,6.766,-5.266,-5.266
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,172,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,1.5,6.766,-5.266,-5.266
-9,Pagat,10.1177/153567600701200206,27,FALSE,TRUE,173,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,2,6.766,-5.266,-5.266
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,174,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.083333333,6.4079999999999995,-3.2649999999999997,-4.9079999999999995
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,175,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.166666667,6.4079999999999995,-4.8839999999999995,-4.9079999999999995
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,176,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.5,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,177,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,1,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,178,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,1.5,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
-9,Pagat,10.1177/153567600701200206,28,FALSE,TRUE,179,10,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,2,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
+6,Leclercq,10.1111/irv.12261,18,FALSE,TRUE,129,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.008333333,5.59,-0.9199999999999999,-4.92
+6,Leclercq,10.1111/irv.12261,18,FALSE,TRUE,130,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.25,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,18,FALSE,TRUE,131,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,0.5,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,18,FALSE,TRUE,132,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,1,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,18,FALSE,TRUE,133,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,56,NA,2,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,19,FALSE,TRUE,134,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.008333333,5.59,-3.59,-4.92
+6,Leclercq,10.1111/irv.12261,19,FALSE,TRUE,135,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.25,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,19,FALSE,TRUE,136,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,0.5,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,19,FALSE,TRUE,137,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,1,5.59,-4.92,-4.92
+6,Leclercq,10.1111/irv.12261,19,FALSE,TRUE,138,7,MERS-CoV,Bulk medium,DMEM + 5% FCS + antibiotics,CCM,Unspecified,65,NA,2,5.59,-4.92,-4.92
+7,Lamarre,10.1139/m89-160,20,FALSE,TRUE,139,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,24,6.101,0.004000000000000423,-4.801
+7,Lamarre,10.1139/m89-160,20,FALSE,TRUE,140,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,96,6.101,-0.12000000000000012,-4.801
+7,Lamarre,10.1139/m89-160,20,FALSE,TRUE,141,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,4,NA,312,6.101,-0.6609999999999996,-4.801
+7,Lamarre,10.1139/m89-160,21,FALSE,TRUE,142,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,24,5.548,-0.6360000000000001,-4.248
+7,Lamarre,10.1139/m89-160,21,FALSE,TRUE,143,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,96,5.548,-1.709,-4.248
+7,Lamarre,10.1139/m89-160,21,FALSE,TRUE,144,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,22,NA,312,5.548,-4.251,-4.248
+7,Lamarre,10.1139/m89-160,22,FALSE,TRUE,145,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,24,5.391,-0.6020000000000003,-4.091
+7,Lamarre,10.1139/m89-160,22,FALSE,TRUE,146,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,96,5.391,-1.7730000000000001,-4.091
+7,Lamarre,10.1139/m89-160,22,FALSE,TRUE,147,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,33,NA,264,5.391,-4.101,-4.091
+7,Lamarre,10.1139/m89-160,23,FALSE,TRUE,148,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,37,NA,24,4.687,-0.9510000000000001,-3.3870000000000005
+7,Lamarre,10.1139/m89-160,23,FALSE,TRUE,149,8,HCoV-229E,Bulk medium,Half MEM + half Hank's M199 + 5% FCS + 0.13% sodium bicarbonate + antibiotics + 150 mM NaCl + 0.1 M citric acid and 0.2 M sodium phosphate dibasic at pH 6,CCM,Unspecified,37,NA,96,4.687,-3.391,-3.3870000000000005
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,150,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.083333333,6.766,-0.9429999999999996,-5.266
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,151,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.166666667,6.766,-1.3949999999999996,-5.266
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,152,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,0.5,6.766,-4.411,-5.266
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,153,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,1,6.766,-5.266,-5.266
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,154,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,1.5,6.766,-5.266,-5.266
+8,Pagat,10.1177/153567600701200206,24,FALSE,TRUE,155,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,60,NA,2,6.766,-5.266,-5.266
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,156,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.083333333,6.4079999999999995,-3.2649999999999997,-4.9079999999999995
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,157,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.166666667,6.4079999999999995,-4.8839999999999995,-4.9079999999999995
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,158,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,0.5,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,159,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,1,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,160,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,1.5,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
+8,Pagat,10.1177/153567600701200206,25,FALSE,TRUE,161,9,SARS-CoV-1,Bulk medium,IMDM + 1% FCS,CCM,Unspecified,70,NA,2,6.4079999999999995,-4.9079999999999995,-4.9079999999999995
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,162,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,4,4.54,-0.31599999999999984,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,163,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,8,4.54,-0.6320000000000001,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,164,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,24,4.54,-0.2729999999999997,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,165,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,72,4.54,-1.2349999999999999,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,166,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,96,4.54,-1.0060000000000002,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,167,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,168,4.54,-1.2069999999999999,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,26,FALSE,TRUE,168,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,4,45,336,4.54,-2.356,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,169,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,4,4.555,-0.431,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,170,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,8,4.555,-1.2649999999999997,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,171,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,24,4.555,-1.8109999999999995,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,172,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,72,4.555,-2.5549999999999997,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,173,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,96,4.555,-2.5549999999999997,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,174,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,168,4.555,-2.5549999999999997,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,27,FALSE,TRUE,175,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,22,45,336,4.555,-2.5549999999999997,-2.5549999999999997
+9,Harbourt,10.1371/journal.pntd.0008831,28,FALSE,TRUE,176,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,4,4.54,-1.968,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,28,FALSE,TRUE,177,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,8,4.54,-2.54,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,28,FALSE,TRUE,178,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,24,4.54,-2.54,-2.54
+9,Harbourt,10.1371/journal.pntd.0008831,28,FALSE,TRUE,179,10,SARS-CoV-2,Skin,MEM + 10% FCS,CCM,Unspecified,37,45,72,4.54,-2.54,-2.54
 10,van Doremalen,10.2807/1560-7917.ES2013.18.38.20590,29,FALSE,FALSE,180,11,MERS-CoV,Plastic,Unspecified,CCM,Unspecified,20,40,0.166666667,6,-1,-5.5
 10,van Doremalen,10.2807/1560-7917.ES2013.18.38.20590,29,FALSE,FALSE,181,11,MERS-CoV,Plastic,Unspecified,CCM,Unspecified,20,40,0.5,6,-1.25,-5.5
 10,van Doremalen,10.2807/1560-7917.ES2013.18.38.20590,29,FALSE,FALSE,182,11,MERS-CoV,Plastic,Unspecified,CCM,Unspecified,20,40,1,6,-1.5,-5.5

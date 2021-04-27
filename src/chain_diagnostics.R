@@ -2,7 +2,7 @@
 
 #####################################
 ## name: chain_diagnostics.R
-## author: Dylan Morris <dhmorris@princeton.edu>
+## author: Dylan Morris
 ##
 ## read in mcmc chains
 ## and output diagnostics

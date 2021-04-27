@@ -200,7 +200,7 @@ titer_ests_draws <- titer_ests_draws %>%
     add_titer_metadata(dat) %>%
     inner_join(pos_wells,
                by = "titer_id") %>%
-    mutate(detectable = n_pos > 1) %>%
+    mutate(detectable = n_pos > 0) %>%
     filter(material == "Plastic") %>%
     inner_join(median_drying_times,
                by = "experiment_id")
@@ -345,28 +345,6 @@ panel <- panel +
           panel.spacing.y = unit(5, "lines")) +
     labs(tag = "relative humidity (%)",
          subtitle = "temperature (\u00B0C)")
-
-
-if(!evaporation){
-    panel <- panel +
-        geom_density_ridges(
-            data = hl_dat,
-            mapping = aes(
-                y = 10^(log10(ylim[2])),
-                x = half_life,
-                fill = virus,
-                height = ..ndensity..),
-            scale = 1.2) +
-        stat_pointinterval(
-            data = hl_dat,
-            mapping = aes(
-                y = 10^(log10(ylim[2])),
-                x = half_life),
-            .width = 0.95,
-            shape = 19,
-            color = interval_grey,
-            size = 35)
-}
 
 
 ####################################

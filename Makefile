@@ -112,7 +112,7 @@ INFER_$(SARS_MERS_NAME)_NAME = inferred-$(SARS_MERS_NAME)-titers
 INFER_$(SEP_REGIME_MOD_CONC_NAME)_NAME = $(INFER_$(PLA_NAME)_NAME)
 INFER_$(SEP_REGIME_MEAS_CONC_NAME)_NAME = $(INFER_$(PLA_NAME)_NAME)
 
-TITER_MODEL_NAMES = $(INFER_$(PLA_NAME)_NAME) $(INFER_$(SARS_MERS_NAME)_NAME)
+TITER_MODEL_NAMES = $(INFER_$(PLA_NAME)_NAME) $(INFER_$(SARS_MERS_NAME)_NAME) 
 
 ####################
 # groups of models
@@ -155,7 +155,7 @@ $(LIT_NAME)_DATA = $(CLEANED)/$($(LIT_NAME)_DATAFILE)
 $(SARS_MERS_NAME)_DATA = $(CLEANED)/$($(SARS_MERS_NAME)_DATAFILE)
 EVAPORATION_DATA = $(CLEANED)/$(EVAPORATION_DATAFILE)
 
-CLEANED_DATA = $($(PLA_NAME)_DATA) $($(LIT_NAME)_DATA) $($(SARS_MERS_NAME)_DATA) $(EVAPORATION_DATA)
+CLEANED_DATA = $($(PLA_NAME)_DATA) $($(LIT_NAME)_DATA) $($(SARS_MERS_NAME)_DATA) $(EVAPORATION_DATA) 
 
 
 ###########################
@@ -286,7 +286,7 @@ MODEL_FIT_FIGURES = $(addprefix figure-, $(addsuffix -qe-fit.pdf, $(REGRESSION_M
 
 POSTERIOR_CHECK_FIGURES = $(addprefix $(POSTERIOR_CHECK_DIR_NAME)/figure-, $(addsuffix -posterior-check.pdf, $(MODEL_NAMES))) $(addprefix $(POSTERIOR_CHECK_DIR_NAME)/figure-evap-phase-, $(addsuffix -posterior-check.pdf, $(EVAPORATION_MODEL_NAMES)))
 
-FIGURES = figure-halflives-schematic.pdf figure-extrapolation.pdf figure-concentration-factor-mech.pdf figure-concentration-factor-model.pdf figure-predict-literature.pdf figure-evaporation.pdf figure-prisma.pdf figure-sars-mers-regression.pdf figure-parameters.pdf figure-compare-activation-energies.pdf $(PRIOR_CHECK_FIGURES) $(POSTERIOR_CHECK_FIGURES) $(MODEL_FIT_FIGURES)
+FIGURES = figure-halflives-schematic.pdf figure-extrapolation.pdf figure-concentration-factor-mech.pdf figure-concentration-factor-model.pdf figure-predict-literature.pdf figure-evaporation.pdf figure-prisma.pdf figure-sars-mers-regression.pdf figure-parameters.pdf figure-compare-activation-energies.pdf figure-halflives-compare.pdf $(PRIOR_CHECK_FIGURES) $(POSTERIOR_CHECK_FIGURES) $(MODEL_FIT_FIGURES)
 
 FIGURE_PATHS = $(addprefix $(FIGURE_DIR)/, $(FIGURES))
 MS_FIGURES = $(addprefix $(MS_FIG_DIR)/, $(FIGURES))
@@ -295,7 +295,7 @@ MS_FIGURES = $(addprefix $(MS_FIG_DIR)/, $(FIGURES))
 ## all tables
 #############################
 
-TABLES = table-$(PLA_NAME)-halflives.tex table-$(SARS_MERS_NAME)-halflives.tex table-$(LIT_NAME)-halflives.tex table-meas-parameters.tex table-mod-parameters.tex
+TABLES = table-$(PLA_NAME)-halflives.tex table-$(SARS_MERS_NAME)-halflives.tex table-$(LIT_NAME)-halflives.tex table-meas-parameters.tex table-mod-parameters.tex table-relative-predictions.csv table-absolute-predictions.csv
 
 TABLE_PATHS = $(addprefix $(TABLE_DIR)/, $(TABLES))
 MS_TABLES = $(addprefix $(MS_TABLE_DIR)/, $(TABLES))
@@ -410,12 +410,7 @@ $(FIGURE_DIR)/figure-halflives-schematic.pdf: $(FIGURE_SRC)/figure-halflives-sch
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
 
-$(FIGURE_DIR)/figure-extrapolation.pdf: $(FIGURE_SRC)/figure-extrapolation.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_CHAINS) $(MECH_EVAP_SALT_CHAINS)
-	$(MKDIR) $(FIGURE_DIR)
-	$(R_COMMAND) $^ $@
-	$(FIG_CLEANUP)
-
-$(FIGURE_DIR)/figure-extrapolation.jpg: $(FIGURE_SRC)/figure-extrapolation.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_CHAINS) $(MECH_EVAP_SALT_CHAINS)
+$(FIGURE_DIR)/figure-extrapolation.pdf: $(FIGURE_SRC)/figure-extrapolation.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_SALT_CHAINS)
 	$(MKDIR) $(FIGURE_DIR)
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
@@ -425,6 +420,7 @@ $(FIGURE_DIR)/figure-sars-mers-regression.pdf: $(FIGURE_SRC)/figure-sars-mers-re
 	$(MKDIR) $(FIGURE_DIR)
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
+
 
 $(FIGURE_DIR)/figure-predict-literature.pdf: $(FIGURE_SRC)/figure-predict-literature.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_SALT_CHAINS)
 	$(MKDIR) $(FIGURE_DIR)
@@ -465,6 +461,13 @@ $(FIGURE_DIR)/figure-compare-activation-energies.pdf: $(FIGURE_SRC)/figure-compa
 	$(MKDIR) $(FIGURE_DIR)
 	$(R_COMMAND) $^ $@
 	$(FIG_CLEANUP)
+
+
+$(FIGURE_DIR)/figure-halflives-compare.pdf: $(FIGURE_SRC)/figure-halflives-compare.R $($(PLA_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_SALT_CHAINS) $(MECH_EVAP_CHAINS)
+	$(MKDIR) $(FIGURE_DIR)
+	$(R_COMMAND) $^ $@
+	$(FIG_CLEANUP)
+
 
 $(FIGURE_DIR)/$(PRIOR_CHECK_DIR_NAME)/figure-literature-prior-check.pdf: $(FIGURE_SRC)/figure-literature-predictive-check.R $($(LIT_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(LIT_NAME)$(PRIOR_CHECK_SUFFIX)
 	$(MKDIR) $(dir $@)
@@ -550,6 +553,13 @@ $(TABLE_DIR)/table-mod-parameters.tex: $(TABLE_SRC)/table-parameters.R $($(MECH_
 	$(R_COMMAND) $^ $@ modeled
 
 
+$(TABLE_DIR)/table-relative-predictions.csv: $(FIGURE_SRC)/figure-extrapolation.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_SALT_CHAINS)
+	$(MKDIR) $(TABLE_DIR)
+	$(R_COMMAND) $^ $@
+
+$(TABLE_DIR)/table-absolute-predictions.csv: $(FIGURE_SRC)/figure-predict-literature.R $($(PLA_NAME)_FITTING_DATA) $($(LIT_NAME)_FITTING_DATA) $($(SARS_MERS_NAME)_FITTING_DATA) $(MCMC_CHAINS)/$(PLA_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(LIT_NAME)$(CHAINS_SUFFIX) $(MCMC_CHAINS)/$(SARS_MERS_NAME)$(CHAINS_SUFFIX) $(MECH_EVAP_SALT_CHAINS)
+	$(MKDIR) $(TABLE_DIR)
+	$(R_COMMAND) $^ $@
 
 $(TABLE_DIR)/%.tex: $(TABLE_SRC)/%.R
 	$(MKDIR) $(TABLE_DIR)
@@ -557,7 +567,7 @@ $(TABLE_DIR)/%.tex: $(TABLE_SRC)/%.R
 
 ## rule to copy tables from output directory
 ## to the manuscript directory
-$(MS_TABLE_DIR)/%.tex: $(TABLE_DIR)/%.tex
+$(MS_TABLE_DIR)/%: $(TABLE_DIR)/%
 	$(MKDIR) $(MS_TABLE_DIR)
 	$(CP) $< $@
 
@@ -587,6 +597,10 @@ $(MS_MACRO_DIR)/macros-%-hyperparams.sty: $(PARAMS)/make-parameter-macros.R $(PA
 	$(MKDIR) $(MS_MACRO_DIR)
 	$(R_COMMAND) $^ $@
 
+
+$(MS)/bibliography.bib: $(DATA)/bibliography.bib
+	$(MKDIR) $(MS)
+	$(CP) $^ $@
 
 
 #####################################

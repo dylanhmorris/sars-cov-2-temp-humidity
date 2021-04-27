@@ -1,4 +1,4 @@
-# The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses
+# [Mechanistic theory predicts the effects of temperature and humidity on inactivation of SARS-CoV-2 and other enveloped viruses](https://doi.org/10.7554/eLife.65902)
 [Dylan H. Morris](https://dylanhmorris.com)(1\*), Kwe Claude Yinda (2\*), Amandine Gamble(3\*), Fernando W. Rossine(1), Qishen Huang(4), Trenton Bushmaker(2, 5), M. Jeremiah Matson(2, 6), Neeltje van Doremalen(2), Peter J. Vikesland(4), Linsey C. Marr(4), Vincent J. Munster(2), James O. Lloyd-Smith(3)
 
 \* These authors contributed equally
@@ -12,39 +12,34 @@
 
 
 ## Repository information
-This repository accompanies the article "The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses" (DH Morris et al, 2020). It provides code for reproducing data analysis and theoretical modeling from the paper and recreating display figures.
+This repository accompanies the article "Mechanistic theory predicts the effects of temperature and humidity on inactivation of SARS-CoV-2 and other enveloped viruses" (DH Morris et al, *eLife*, 2021). It provides code for reproducing data analysis and theoretical modeling from the paper and recreating display figures.
 
 ## License and citation information
 If you use the code or data provided here, please make sure to do so in light of the project [license](LICENSE.txt) and please cite our work as below:
 
-- DH Morris, KC Yinda, A Gamble et al. The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses. bioRxiv preprint. 2020. DOI:[10.1101/2020.10.16.341883](https://doi.org/10.1101/2020.10.16.341883)
+- DH Morris, KC Yinda, A Gamble et al. Mechanistic theory predicts the effects of temperature and humidity on inactivation of SARS-CoV-2 and other enveloped viruses. *eLife*. 2021-04-27. DOI:[10.7554/eLife.65902](https://doi.org/10.7554/eLife.65902).
 
 Bibtex record:
 ```
-@article{morris2020temperature,
-    author = {
-      Dylan H. Morris AND 
-      Kwe Claude Yinda AND 
-      Amandine Gamble AND 
-      Fernando W. Rossine AND
-      Qishen Huang AND
-      Trenton Bushmaker AND
-      M. Jeremiah Matson AND 
-      Neeltje van Doremalen AND 
-      Peter J. Vikesland AND 
-      Linsey C. Marr AND
-      Vincent J. Munster AND
-      James O. Lloyd-Smith},
-      title = {The effect of temperature and humidity on the stability of SARS-CoV-2 and other enveloped viruses},
-      journal = {bioRxiv preprint},
-      year = {2020},
-      doi = {10.1101/2020.10.16.341883},
-      URL = {https://github.com/dylanhmorris/sars-cov-2-temp-humidity}
+@article {10.7554/eLife.65902,
+article_type = {journal},
+title = {Mechanistic theory predicts the effects of temperature and humidity on inactivation of SARS-CoV-2 and other enveloped viruses},
+author = {Morris, Dylan H and Yinda, Kwe Claude and Gamble, Amandine and Rossine, Fernando W and Huang, Qishen and Bushmaker, Trenton and Fischer, Robert J and Matson, M Jeremiah and Van Doremalen, Neeltje and Vikesland, Peter J and Marr, Linsey C and Munster, Vincent J and Lloyd-Smith, James O},
+editor = {Ogbunugafor, C. Brandon},
+volume = 10,
+year = 2021,
+month = {04},
+pub_date = {2021-04-27},
+pages = {e65902},
+citation = {eLife 2021;10:e65902},
+doi = {10.7554/eLife.65902},
+journal = {eLife},
 }
 ```
 
 ## Article abstract 
-Understanding the impact of environmental conditions on virus viability and transmission potential is crucial to anticipating epidemic dynamics and designing mitigation strategies. Ambient temperature and humidity are known to have strong effects on the environmental stability of viruses, but a general quantitative understanding of how temperature and humidity affect virus stability has remained elusive. We characterize the stability of SARS-CoV-2 on an inert surface at a variety of temperature and humidity conditions, and introduce a mechanistic model that enables accurate prediction of virus stability in unobserved conditions. We find that SARS-CoV-2 survives better at low temperatures and extreme relative humidities; median estimated virus half-life was more than 24 hours at 10 °C and 40 % RH, but approximately an hour and a half at 27 °C and 65 % RH. Moreover, our model predicts observations from other human coronaviruses and other studies of SARS-CoV-2, suggesting the existence of shared mechanisms that determine environmental stability across a number of enveloped viruses. Our results highlight scenarios of particular transmission risk and point to broad strategies for pandemic mitigation, while opening new frontiers for the mechanistic study of viral transmission.
+Ambient temperature and humidity strongly affect inactivation rates of enveloped viruses, but a mechanistic, quantitative theory of these effects has been elusive. We measure the stability of SARS-CoV-2 on an inert surface at nine temperature and humidity conditions and develop a mechanistic model to explain and predict how temperature and humidity alter virus inactivation. We find SARS-CoV-2 survives longest at low temperatures and extreme relative humidities (RH); median estimated virus half-life is >24 hours at 10C and 40% RH, but ~1.5 hours at 27C and 65% RH. Our mechanistic model uses fundamental chemistry to explain why inactivation rate increases with increased temperature and shows a U-shaped dependence on RH. The model accurately predicts existing measurements of five different human coronaviruses, suggesting that shared mechanisms may affect stability for many viruses. The results indicate scenarios of high transmission risk, point to mitigation strategies, and advance the mechanistic study of virus transmission.
+
 
 ## Directories
 - ``src``: all code, including data preprocessing, Bayesian model definition and fitting, and results post-processing and figure generation:

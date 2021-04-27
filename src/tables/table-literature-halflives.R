@@ -102,7 +102,7 @@ table_caption <- paste0(
     "posterior median and the middle 95\\% ",
     "credible interval. CCM: cell culture medium; ",
     "VTM: virus transport medium; ",
-    "Resp. sec.: respiratory secretions")
+    "Resp. sec.: respiratory secretions.")
 
 table_label <- "tab:literature-halflives"
 

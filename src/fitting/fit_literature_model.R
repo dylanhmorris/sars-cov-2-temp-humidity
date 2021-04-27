@@ -41,7 +41,7 @@ fit_model <- function(model_src_path,
     rstan_options(auto_write = TRUE)
     niter <- 3000
     nchains <- n_cores
-    adapt_d <- 0.95
+    adapt_d <- 0.98
     max_tree <- 10
     set.seed(inits_seed) ## R's rng set for random inits
     init_val <- "random"

@@ -15,5 +15,5 @@ hyperparam_list <- list(
     sd_sd_sample = 0.2,
     debug = FALSE)
 
-fixed_seed <- 23032
-inits_seed <- 32
+fixed_seed <- 230223
+inits_seed <- 3235

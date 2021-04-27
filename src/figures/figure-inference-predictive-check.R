@@ -134,7 +134,7 @@ titer_ests_draws <- titer_ests_draws %>%
     add_titer_metadata(dat) %>%
     inner_join(pos_wells,
                by = "titer_id") %>%
-    mutate(detectable = n_pos > 1) %>%
+    mutate(detectable = n_pos > 0) %>%
     filter(material == "Plastic")
 
 ## sort by time
